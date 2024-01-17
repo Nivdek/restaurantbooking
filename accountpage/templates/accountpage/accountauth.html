@@ -2,14 +2,9 @@
 
 {% block content %}
 
-{% if user.is_authenticated%}
-<div>
-    <div>{% include "account/logout.html" %}</div>
-</div>
-{% else %}
 <div>
     <div>{% include "account/login.html" %}</div>
     <div>{% include "account/signup.html" %}</div>
 </div>
-{% endif %}
+
 {% endblock content %}

@@ -29,6 +29,9 @@ class Restaurant(models.Model):
 
 
 class Booking(models.Model):
+    """
+    The Booking model is defined and passed to BookingForm in forms.py
+    """
     restaurant = models.ForeignKey(
         Restaurant, on_delete=models.CASCADE, related_name="bookings"
     )
