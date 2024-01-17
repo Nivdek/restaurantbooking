@@ -17,8 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
 urlpatterns = [
+    path("accountpage/", include("accountpage.urls"), name="accountpage.urls"),
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path("summernote/", include("django_summernote.urls")),

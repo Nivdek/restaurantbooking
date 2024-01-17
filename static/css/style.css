@@ -8,6 +8,11 @@
     color: rgb(236, 134, 10);
 }
 
+.nav-link {
+    color: antiquewhite;
+}
+
+
 /* mainpage Styles  */
 .scale {
     width: 100%;
