@@ -10,7 +10,7 @@ def accountauth(request):
     if not, the view will render the accountlanding template for Login / Signup.
     """
     if request.user.is_authenticated:
-        return HttpResponseRedirect("/")
+        return HttpResponseRedirect("/accountpage/accountoverview")
     else:
         return render(
             request,
@@ -18,3 +18,8 @@ def accountauth(request):
         )
 
 
+def accountoverview(request):
+     return render(
+            request,
+            "accountpage/accountoverview.html",
+        )
