@@ -1,0 +1,20 @@
+/* Navbar Styles */
+
+.logo-color-1 {
+    color: antiquewhite;
+}
+
+.logo-color-2 {
+    color: rgb(236, 134, 10);
+}
+
+.nav-link {
+    color: antiquewhite;
+}
+
+
+/* mainpage Styles  */
+.scale {
+    width: 100%;
+    height: auto;
+}

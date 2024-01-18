@@ -1,5 +1,7 @@
 from django import forms
+from django.contrib.admin import widgets
 from .models import Booking
+
 
 class BookingForm(forms.ModelForm):
     """
@@ -11,7 +13,8 @@ class BookingForm(forms.ModelForm):
         fields = ['email', 'phone', 'date', 'no_of_guests', 'additional_notes',]
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        # Add the 'datetimepicker-input' class to the widget for the DateTimeField
-        self.fields['date'].widget.attrs['class'] = 'form-control datetimepicker-input'
+        super(BookingForm, self).__init__(*args, **kwargs)
+        self.fields['date'].widget = widgets.AdminSplitDateTime()
+        
+    
     
