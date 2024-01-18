@@ -26,7 +26,9 @@ def restaurant_detail(request, slug):
     if request.method == "POST":
         print("Received a POST request")
         booking_form = BookingForm(data=request.POST)
+        print("Form is set")
         if booking_form.is_valid():
+            print("Form is valid")
             booking = booking_form.save(commit=False)
             booking.restaurant = restaurant
             booking.save()
@@ -34,7 +36,8 @@ def restaurant_detail(request, slug):
                 request, messages.SUCCESS,
                 'Booking receieved and awaiting confirmation.'
             )
-
+        else:
+            print(booking_form.errors.as_data())
     booking_form = BookingForm()
     print("About to render template")
 

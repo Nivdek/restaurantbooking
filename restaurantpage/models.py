@@ -39,7 +39,7 @@ class Booking(models.Model):
     phone = models.IntegerField()
     date = models.DateTimeField()
     no_of_guests = models.IntegerField(default=1)
-    additional_notes = models.TextField(blank=True)
+    additional_notes = models.TextField(blank=True, null=True)
 
     # These attributes are for data handling and administrative operations
     approved = models.BooleanField(default=False)
