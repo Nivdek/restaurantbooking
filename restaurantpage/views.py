@@ -15,7 +15,7 @@ class RestaurantList(generic.ListView):
     template_name = "restaurantpage/index.html"
 
 
-@csrf_exempt
+
 def restaurant_detail(request, slug):
     """
     This view handles both the detailed restaurant view when a restaurant item is clicked
@@ -23,7 +23,6 @@ def restaurant_detail(request, slug):
     """
     queryset = Restaurant.objects.filter(status=1)
     restaurant = get_object_or_404(queryset, slug=slug)
-    print("Received a GET request")
     if request.method == "POST":
         print("Received a POST request")
         booking_form = BookingForm(data=request.POST)

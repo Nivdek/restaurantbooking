@@ -22,8 +22,6 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
                     {{ restaurant.about | safe }}
                 </p>
@@ -35,6 +33,7 @@
             <form id="bookingForm" method="post"
             style="margin-top: 1.3em;">
             {{ booking_form | crispy }}
+            {% csrf_token %}
             <button id="submitButton" type="submit"
                 class="btn btn-signup btn-lg">Submit</button>
             </form>
