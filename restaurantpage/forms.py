@@ -14,7 +14,7 @@ class BookingForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(BookingForm, self).__init__(*args, **kwargs)
-        self.fields['date'].widget = widgets.AdminSplitDateTime()
+        self.fields['date'].widget = forms.DateTimeInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M:%S')
         
     
     
