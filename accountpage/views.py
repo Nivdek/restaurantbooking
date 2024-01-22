@@ -19,7 +19,14 @@ def accountauth(request):
 
 
 def accountoverview(request):
-     return render(
+    """
+    The account view is for handling and displaying all user-related information.
+    Users can view and manage their account and their bookings/restaurants.
+    """
+    if request.user.is_authenticated:
+        return render(
             request,
             "accountpage/accountoverview.html",
         )
+    else:
+        return HttpResponseRedirect("/accountpage/accountauth")

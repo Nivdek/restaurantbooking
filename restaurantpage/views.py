@@ -24,11 +24,8 @@ def restaurant_detail(request, slug):
     queryset = Restaurant.objects.filter(status=1)
     restaurant = get_object_or_404(queryset, slug=slug)
     if request.method == "POST":
-        print("Received a POST request")
         booking_form = BookingForm(data=request.POST)
-        print("Form is set")
         if booking_form.is_valid():
-            print("Form is valid")
             booking = booking_form.save(commit=False)
             booking.restaurant = restaurant
             booking.save()
@@ -38,9 +35,9 @@ def restaurant_detail(request, slug):
             )
         else:
             print(booking_form.errors.as_data())
+            
     booking_form = BookingForm()
-    print("About to render template")
-
+    
     return render(
         request,
         "restaurantpage/restaurant_detail.html",
