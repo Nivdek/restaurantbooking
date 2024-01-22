@@ -7,17 +7,16 @@
     <div class="container mt-5">
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">Profile</button>
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
               <button class="nav-link" id="nav-bookings-tab" data-bs-toggle="tab" data-bs-target="#nav-bookings" type="button" role="tab" aria-controls="nav-bookings" aria-selected="false">Bookings</button>
               <button class="nav-link" id="nav-restaurant-tab" data-bs-toggle="tab" data-bs-target="#nav-restaurant" type="button" role="tab" aria-controls="nav-restaurant" aria-selected="false">Restaurants</button>
             </div>
-          </nav>
-          <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">This is the Account Profile Tab</div>
-            <div class="tab-pane fade" id="nav-bookings" role="tabpanel" aria-labelledby="nav-bookings-tab">This tab contains the bookings for the account</div>
-            <div class="tab-pane fade" id="nav-restaurant" role="tabpanel" aria-labelledby="nav-restaurant-tab">this tab contains the restaurants owned by the account</div>
-          </div>
-        </div>
+        </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">This is the Account Profile Tab</div>
+              <div class="tab-pane fade" id="nav-bookings" role="tabpanel" aria-labelledby="nav-bookings-tab">This tab contains the bookings for the account</div>
+              <div class="tab-pane fade" id="nav-restaurant" role="tabpanel" aria-labelledby="nav-restaurant-tab">this tab contains the restaurants owned by the account</div>
+            </div>
     </div>
 
 {% endblock content %}
