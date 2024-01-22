@@ -27,7 +27,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-nivdek-restaurantprojec-s8i1jbjn28m.ws-eu107.gitpod.io', '.herokuapp.com']
 
@@ -132,7 +132,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-relay.brevo.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'edvinlarsson0110@gmail.com'
+EMAIL_HOST_PASSWORD = 'jQV5cgrXsxqIvATt'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
