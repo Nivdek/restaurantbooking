@@ -133,11 +133,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp-relay.brevo.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'edvinlarsson0110@gmail.com'
-EMAIL_HOST_PASSWORD = 'jQV5cgrXsxqIvATt'
+EMAIL_HOST_PASSWORD = 'prmz pexd nnqo bsjd'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 ACCOUNT_EMAIL_REQUIRED = True

@@ -43,5 +43,3 @@ django.jQuery(document).ready(function ($) {
     // Trigger hashchange event after activating the initial tab
     $(window).trigger('hashchange');
 });
-
-  
