@@ -1,3 +1,10 @@
+django.jQuery.ajaxSetup({
+    beforeSend: function (xhr, settings) {
+        xhr.setRequestHeader("X-CSRFToken", '{% csrf_token %}');
+    }
+});
+
+
 /* Script for URL Hashing in the accountoverview */
 django.jQuery(document).ready(function ($) {
     // Function to update the URL hash when a tab is clicked
@@ -10,12 +17,34 @@ django.jQuery(document).ready(function ($) {
     function activateTabFromHash() {
         var hash = window.location.hash;
         if (hash) {
+            // Extract the tab identifier from the hash
+            var tabIdentifier = hash.replace('#nav-', '');
+
+            // Update the URL dynamically
+            var tabUrl = '/accountpage/accountoverview/?tab=' + tabIdentifier;
+
             // Use Bootstrap's Tab JavaScript methods to activate the tab
             var tabSelector = 'button[data-bs-target="' + hash + '"]';
             var tab = $(tabSelector)[0];
             if (tab) {
                 var tabPaneId = $(tab).attr('data-bs-target');
                 var tabContentId = $(tabPaneId).attr('id');
+                
+                // Load content dynamically using AJAX
+                console.log(tabUrl);
+                $.ajax({
+                    url: tabUrl,  // Use the dynamically constructed URL
+                    type: 'GET',
+                    success: function (data) {
+                        console.log(data);
+                        // Update the content of the tab pane
+                        $('#' + tabContentId).html(data);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+
                 var tabInstance = new bootstrap.Tab(tab);
                 tabInstance.show();
                 $('#' + tabContentId).addClass('show active');
@@ -34,12 +63,12 @@ django.jQuery(document).ready(function ($) {
         }
     }
 
-    // Listen for changes in the URL hash
-    $(window).on('hashchange', activateTabFromHash);
+     // Listen for changes in the URL hash
+     $(window).on('hashchange', activateTabFromHash);
 
-    // Activate the initial tab based on the URL hash
-    activateTabFromHash();
-
-    // Trigger hashchange event after activating the initial tab
-    $(window).trigger('hashchange');
-});
+     // Activate the initial tab based on the URL hash
+     activateTabFromHash();
+ 
+     // Trigger hashchange event after activating the initial tab
+     $(window).trigger('hashchange');
+ });

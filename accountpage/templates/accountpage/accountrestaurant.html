@@ -1,0 +1,10 @@
+{% extends "accountpage/accountoverview.html" %}
+
+{% block tab_content %}
+    <div class="tab-pane fade" id="nav-restaurant" role="tabpanel" aria-labelledby="nav-restaurant-tab">
+        <h2>Restaurants</h2>
+        {% for restaurant in restaurants %}
+            <p>{{ restaurant }}</p>
+        {% endfor %}
+    </div>
+{% endblock tab_content %}
