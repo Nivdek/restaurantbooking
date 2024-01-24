@@ -1,8 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import User
+from customuser.models import CustomUser
+from django.conf import settings
 from cloudinary.models import CloudinaryField
 
+
 STATUS = ((0, "Pending"), (1, "Published"))
+CustomUser = settings.AUTH_USER_MODEL
+
 
 # Create your models here.
 class Restaurant(models.Model):
@@ -16,8 +20,8 @@ class Restaurant(models.Model):
     
     # These attributes are for data handling and administrative operations
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="restaurant_posts",
-        default=User
+        CustomUser, on_delete=models.CASCADE, related_name="restaurant_posts",
+        default=CustomUser
     )
     status = models.IntegerField(choices=STATUS, default=0)
 

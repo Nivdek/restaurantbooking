@@ -1,10 +1,10 @@
-{% extends "accountpage/accountoverview.html" %}
-
-{% block tab_content %}
-    <div class="tab-pane fade" id="nav-bookings" role="tabpanel" aria-labelledby="nav-bookings-tab">
-        <h2>Bookings</h2>
+<h2>Your Bookings</h2>
+{% if bookings %}
+    <ul>
         {% for booking in bookings %}
-            <p>{{ booking }}</p>
+            <li>{{ booking.restaurant }}</li>
         {% endfor %}
-    </div>
-{% endblock tab_content %}
+    </ul>
+{% else %}
+    <p>No bookings found.</p>
+{% endif %}

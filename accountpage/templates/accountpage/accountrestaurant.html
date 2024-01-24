@@ -1,10 +1,11 @@
-{% extends "accountpage/accountoverview.html" %}
 
-{% block tab_content %}
-    <div class="tab-pane fade" id="nav-restaurant" role="tabpanel" aria-labelledby="nav-restaurant-tab">
-        <h2>Restaurants</h2>
+<h2>Your Restaurants</h2>
+{% if restaurants %}
+    <ul>
         {% for restaurant in restaurants %}
-            <p>{{ restaurant }}</p>
+            <li>{{ restaurant.name }} - {{ restaurant.city }}</li>
         {% endfor %}
-    </div>
-{% endblock tab_content %}
+    </ul>
+{% else %}
+    <p>No restaurants found.</p>
+{% endif %}

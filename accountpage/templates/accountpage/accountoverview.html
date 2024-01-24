@@ -14,11 +14,10 @@
     </div>
   </nav>
   <div class="tab-content" id="nav-tabContent">
-    {% block tab_content %}
-    {% endblock tab_content %}
+    <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">{% include "accountpage/accountprofile.html" %}</div>
+    <div class="tab-pane fade" id="nav-bookings" role="tabpanel" aria-labelledby="nav-bookings-tab" tabindex="0">{% include "accountpage/accountbookings.html" %}</div>
+    <div class="tab-pane fade" id="nav-restaurant" role="tabpanel" aria-labelledby="nav-restaurant-tab" tabindex="0">{% include "accountpage/accountrestaurant.html" %}</div>
   </div>
 </div>
-
-
 
 {% endblock content %}
