@@ -1,7 +1,8 @@
+from django.conf import settings
 from django.db import models
 from customuser.models import CustomUser
-from django.conf import settings
 from cloudinary.models import CloudinaryField
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 STATUS = ((0, "Pending"), (1, "Published"))
@@ -14,6 +15,7 @@ class Restaurant(models.Model):
     slug = models.SlugField(max_length=100, unique=True, null=True)
     food_type = models.CharField(max_length=20)
     city = models.CharField(max_length=50)
+    phone_number = PhoneNumberField(null=True)
     address = models.CharField(max_length=50, default='')
     about = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
@@ -40,7 +42,7 @@ class Booking(models.Model):
         Restaurant, on_delete=models.CASCADE, related_name="bookings"
     )
     email = models.EmailField(max_length=254)
-    phone = models.IntegerField()
+    phone_number = PhoneNumberField(blank=True, null=True)
     date = models.DateTimeField()
     no_of_guests = models.IntegerField(default=1)
     additional_notes = models.TextField(blank=True, null=True)

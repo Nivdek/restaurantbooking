@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Restaurant, Booking
 from django_summernote.admin import SummernoteModelAdmin
+from phonenumber_field.modelfields import PhoneNumberField
 
 @admin.register(Restaurant)
 class RestaurantAdmin(SummernoteModelAdmin):

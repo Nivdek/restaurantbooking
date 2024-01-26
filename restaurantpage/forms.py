@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.admin import widgets
+from phonenumber_field.modelfields import PhoneNumberField
 from .models import Booking
 
 
@@ -10,7 +11,7 @@ class BookingForm(forms.ModelForm):
     """
     class Meta:
         model = Booking
-        fields = ['email', 'phone', 'date', 'no_of_guests', 'additional_notes',]
+        fields = ['email', 'phone_number', 'date', 'no_of_guests', 'additional_notes',]
 
     def __init__(self, *args, **kwargs):
         super(BookingForm, self).__init__(*args, **kwargs)
