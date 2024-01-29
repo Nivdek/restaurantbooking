@@ -12,9 +12,154 @@
     color: antiquewhite;
 }
 
+/* Main Content */
 
-/* mainpage Styles  */
+.brand {
+    font-family: Lato, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4F;
+}
+
+.light-bg {
+    background-color: #fff;
+}
+
+.dark-bg {
+    background-color: #445261;
+}
+
+.main-bg {
+    background-color: #606470;
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.card-text {
+    color: antiquewhite;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    left: -2px;
+    min-width: 10%;
+    height: 0;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-left: none;
+    border-right: 25px solid transparent;
+    border-top: 20px solid rgb(236, 134, 10);
+    border-bottom: 20px solid rgb(236, 134, 10);
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
 .scale {
     width: 100%;
     height: auto;
+}
+
+.food-type {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: #445261;
+    color: white;
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 150%;
+    background: #445261;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
+    z-index: 100;
+}
+
+.restaurant-link {
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.restaurant-link:hover {
+    color: rgb(236, 134, 10);
+}
+
+.restaurant-name {
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.restaurant-foodtype {
+    margin-left: 5%;
+    color: antiquewhite;
+}
+
+.btn-signup,
+.btn-edit {
+    background-color: #188181;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #23BBBB;
+}
+
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+.btn-delete {
+    color: #fff;
+    background: #E84610;
+}
+
+.faded {
+    color: rgb(172, 175, 175);
+}
+
+.approval {
+    color: rgb(222, 146, 168);
 }
