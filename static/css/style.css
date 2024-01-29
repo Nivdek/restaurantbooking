@@ -22,7 +22,7 @@
 }
 
 .light-bg {
-    background-color: #fff;
+    background-color: antiquewhite;
 }
 
 .dark-bg {
@@ -36,6 +36,10 @@
 .card {
     border: none;
     background-color: transparent;
+}
+
+.card-body {
+    color: antiquewhite;
 }
 
 .card-text {
@@ -70,7 +74,7 @@
 }
 
 .food-type {
-    color: white;
+    color: antiquewhite;
     margin: 4px;
     text-transform: uppercase;
 }
@@ -86,7 +90,7 @@
 
 .masthead-text {
     background-color: #445261;
-    color: white;
+    color: antiquewhite;
     position: relative;
 }
 
@@ -130,18 +134,18 @@
 
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
-    color: #fff;
+    background-color: rgb(236, 134, 10);
+    color: antiquewhite;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: antiquewhite;
+    color: rgb(236, 134, 10);
 }
 
 .link {
-    color: #23BBBB;
+    color: rgb(236, 134, 10);
     text-decoration: none;
 }
 
