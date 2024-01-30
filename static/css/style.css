@@ -132,16 +132,25 @@
     color: antiquewhite;
 }
 
-.btn-signup,
+.btn {
+    border: none;
+}
+
+.btn-primary,
 .btn-edit {
     background-color: rgb(236, 134, 10);
     color: antiquewhite;
 }
 
-.btn-signup:hover,
-.btn-signup:active {
+.btn-primary:hover,
+.btn-primary:active {
     background-color: antiquewhite;
     color: rgb(236, 134, 10);
+}
+
+.btn-delete {
+    color: #fff;
+    background: #E84610;
 }
 
 .link {
@@ -155,15 +164,32 @@
     text-decoration: underline;
 }
 
-.btn-delete {
-    color: #fff;
-    background: #E84610;
-}
-
 .faded {
     color: rgb(172, 175, 175);
 }
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+/* Accountpage Profile Tab */
+.form-control:focus {
+    box-shadow: none;
+    border-color: rgb(236, 134, 10);
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
 }

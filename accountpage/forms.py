@@ -9,4 +9,4 @@ class UserForm(forms.ModelForm):
     """
     class Meta:
         model = CustomUser
-        fields = ("username", "email", "phone_number", "first_name", "last_name",)
+        fields = ("email", "phone_number", "first_name", "last_name", "address",)

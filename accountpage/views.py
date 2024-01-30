@@ -29,19 +29,20 @@ def accountauth(request):
 
 def accountoverview(request):
     if request.user.is_authenticated:
-        user_instance = request.user  # Get the current user instance
+        user_instance = request.user
         if request.method == 'POST':
             form = UserForm(request.POST, instance=user_instance)
             if form.is_valid():
-                form.save()  # Save the updated user data to the database
-                return redirect('accountoverview')  # Redirect to the same page after successful form submission
+                form.save()
+                return redirect('accountoverview')
         else:
-            form = UserForm(instance=user_instance)  # Create a form instance with user data for GET request
+            form = UserForm(instance=user_instance)
 
         queryset_bookings = Booking.objects.filter(restaurant__author=request.user).order_by("booked_on")
         queryset_restaurants = Restaurant.objects.filter(author=request.user).order_by("status")
     
         context = {
+            'user_instance': user_instance,
             'form': form,
             'bookings': queryset_bookings,
             'restaurants': queryset_restaurants,
