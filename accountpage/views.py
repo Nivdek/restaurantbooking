@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.http import HttpResponseRedirect
 from django.db import models
 from django.contrib import messages
 from django.conf import settings
 from customuser.models import CustomUser
+from .forms import UserForm
 from restaurantpage.models import Restaurant, Booking
 from cloudinary.models import CloudinaryField
 
@@ -25,18 +26,23 @@ def accountauth(request):
         )
 
 
+
 def accountoverview(request):
-    """
-    The account view is for handling and displaying all user-related information.
-    Users can view and manage their account and their bookings/restaurants.
-    """
     if request.user.is_authenticated:
-        queryset_user = CustomUser.objects.filter(username=request.user)
+        user_instance = request.user  # Get the current user instance
+        if request.method == 'POST':
+            form = UserForm(request.POST, instance=user_instance)
+            if form.is_valid():
+                form.save()  # Save the updated user data to the database
+                return redirect('accountoverview')  # Redirect to the same page after successful form submission
+        else:
+            form = UserForm(instance=user_instance)  # Create a form instance with user data for GET request
+
         queryset_bookings = Booking.objects.filter(restaurant__author=request.user).order_by("booked_on")
         queryset_restaurants = Restaurant.objects.filter(author=request.user).order_by("status")
     
         context = {
-            'user': queryset_user,
+            'form': form,
             'bookings': queryset_bookings,
             'restaurants': queryset_restaurants,
         }

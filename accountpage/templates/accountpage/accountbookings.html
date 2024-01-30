@@ -1,10 +1,32 @@
-<h2>Your Bookings</h2>
-{% if bookings %}
-    <ul>
-        {% for booking in bookings %}
-            <li>{{ booking.restaurant }}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No bookings found.</p>
-{% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Active Bookings</h2>
+            {% if bookings %}
+                <ul class="list-unstyled">
+                    {% for booking in bookings %}
+                        {% if booking.approved %}
+                            <li><i class="fa-solid fa-check" style="color: #63E6BE;"></i> {{ booking }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No active bookings.</p>
+            {% endif %}
+        </div>
+        <div class="col">
+            <h2> Booking Requests</h2>
+            {% if bookings %}
+                <ul class="list-unstyled">
+                    {% for booking in bookings %}
+                        {% if not booking.approved %}
+                            <li><i class="fa-solid fa-question" style="color: #FFD43B;"></i> {{ booking }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No booking requests.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
