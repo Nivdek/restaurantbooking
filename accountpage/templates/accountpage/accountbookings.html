@@ -1,32 +1,51 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h2>Active Bookings</h2>
-            {% if bookings %}
-                <ul class="list-unstyled">
-                    {% for booking in bookings %}
-                        {% if booking.approved %}
-                            <li><i class="fa-solid fa-check" style="color: #63E6BE;"></i> {{ booking }}</li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>No active bookings.</p>
-            {% endif %}
+<div class="row card-body">
+    <div class="col-md-3 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <h2>These are your bookings</h2>
+            <p>Click on a booking to view it in further detail.
+                Your approved and pending requests are deneoted by
+                either a checkmark or a questionmark.
+                If the customer has left additional notes in their request
+                this will be denoted by a blue exclamationmark.
+            </p>   
         </div>
-        <div class="col">
-            <h2> Booking Requests</h2>
-            {% if bookings %}
-                <ul class="list-unstyled">
-                    {% for booking in bookings %}
-                        {% if not booking.approved %}
-                            <li><i class="fa-solid fa-question" style="color: #FFD43B;"></i> {{ booking }}</li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>No booking requests.</p>
-            {% endif %}
+    </div>
+    <div class="col-md-5 border-right">
+        <div class="p-3 py-5">
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <h2>Active Bookings</h2>
+                    <br>
+                    {% if bookings %}
+                        <ul class="list-unstyled">
+                            {% for booking in bookings %}
+                                {% if booking.approved %}
+                                    <li class="card-text"><i class="fa-solid fa-check" style="color: #63E6BE;"></i> {{ booking }}</li>
+                                    <hr>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No active bookings.</p>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h2> Booking Requests</h2>
+                    <br>
+                    {% if bookings %}
+                        <ul class="list-unstyled">
+                            {% for booking in bookings %}
+                                {% if not booking.approved %}
+                                    <li class="card-text"><i class="fa-solid fa-question" style="color: #FFD43B;"></i> {{ booking }}</li>
+                                    <hr>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No booking requests.</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 </div>

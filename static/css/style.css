@@ -12,6 +12,16 @@
     color: antiquewhite;
 }
 
+.nav-link:hover,
+.nav-link:focus {
+    color: rgb(236, 134, 10);
+}
+
+#nav-profile-tab.active,
+#nav-bookings-tab.active,
+#nav-restaurant-tab.active {
+    background-color: antiquewhite;
+}
 /* Main Content */
 
 .brand {
@@ -183,9 +193,7 @@
     cursor: pointer
 }
 
-.labels {
-    font-size: 11px
-}
+
 
 .add-experience:hover {
     background: #BA68C8;

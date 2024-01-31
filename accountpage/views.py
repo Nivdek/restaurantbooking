@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views import generic
 from django.http import HttpResponseRedirect
 from django.db import models
 from django.contrib import messages
