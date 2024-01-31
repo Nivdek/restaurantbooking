@@ -22,6 +22,8 @@
 #nav-restaurant-tab.active {
     background-color: antiquewhite;
 }
+
+
 /* Main Content */
 
 .brand {
@@ -115,7 +117,7 @@
     top: 0;
     right: 90%;
     height: 100%;
-    width: 150%;
+    width: 120%;
     background: #445261;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
@@ -193,11 +195,10 @@
     cursor: pointer
 }
 
-
-
 .add-experience:hover {
     background: #BA68C8;
     color: #fff;
     cursor: pointer;
     border: solid 1px #BA68C8
 }
+

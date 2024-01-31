@@ -3,6 +3,9 @@ from django.db import models
 from customuser.models import CustomUser
 from cloudinary.models import CloudinaryField
 from phonenumber_field.modelfields import PhoneNumberField
+from phonenumber_field.phonenumber import to_python
+from django.core.exceptions import ValidationError
+import phonenumbers
 
 
 STATUS = ((0, "Pending"), (1, "Published"))

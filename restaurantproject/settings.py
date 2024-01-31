@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'restaurantpage',
     'accountpage',
     'customuser',
-    'phonenumber_field'
+    'phonenumber_field',
+    'pycountry'
 ]
 
 SITE_ID = 1
