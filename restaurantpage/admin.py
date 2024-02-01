@@ -16,8 +16,7 @@ class RestaurantAdmin(SummernoteModelAdmin):
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
 
-    list_display = ('restaurant', 'date', 'no_of_guests',)
+    list_display = ('restaurant', 'date', 'no_of_guests', 'slug')
     search_fields = ['restaurant', 'date',]
     list_filter = ('approved',)
-    prepopulated_fields = {}
     summernote_fields = ('additional_notes',)

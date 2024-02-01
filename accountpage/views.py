@@ -25,7 +25,6 @@ def accountauth(request):
         )
 
 
-
 def accountoverview(request):
     if request.user.is_authenticated:
         user_instance = request.user
@@ -54,31 +53,7 @@ def accountoverview(request):
 
 def booking_detail(request, slug):
     """
-    This view handles both the detailed restaurant view when a restaurant item is clicked
-    and the booking form which populates the same view.
+    This view handles the detailed booking view when a booking item is clicked
     """
-    queryset = Booking.objects.filter(status=1)
-    restaurant = get_object_or_404(queryset, slug=slug)
-    if request.method == "POST":
-        booking_form = BookingForm(data=request.POST)
-        if booking_form.is_valid():
-            booking = booking_form.save(commit=False)
-            booking.restaurant = restaurant
-            booking.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Booking receieved and awaiting confirmation.'
-            )
-        else:
-            print(booking_form.errors.as_data())
-            
-    booking_form = BookingForm()
-    
-    return render(
-        request,
-        "restaurantpage/restaurant_detail.html",
-        {
-            "restaurant": restaurant,
-            "booking_form": booking_form,
-        },
-    )
+    booking = get_object_or_404(Booking, slug=slug)
+    return render(request, 'accountpage/bookingdetail.html', {'booking': booking})

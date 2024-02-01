@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'accountpage',
     'customuser',
     'phonenumber_field',
-    'pycountry'
+    'pycountry',
+    'autoslug'
 ]
 
 SITE_ID = 1

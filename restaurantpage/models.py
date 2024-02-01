@@ -4,7 +4,6 @@ from customuser.models import CustomUser
 from cloudinary.models import CloudinaryField
 from phonenumber_field.modelfields import PhoneNumberField
 from phonenumber_field.phonenumber import to_python
-from django.core.exceptions import ValidationError
 import phonenumbers
 
 
@@ -38,9 +37,6 @@ class Restaurant(models.Model):
 
 
 class Booking(models.Model):
-    """
-    The Booking model is defined and passed to BookingForm in forms.py
-    """
     restaurant = models.ForeignKey(
         Restaurant, on_delete=models.CASCADE, related_name="bookings"
     )
@@ -49,10 +45,9 @@ class Booking(models.Model):
     date = models.DateTimeField()
     no_of_guests = models.IntegerField(default=1)
     additional_notes = models.TextField(blank=True, null=True)
-
-    # These attributes are for data handling and administrative operations
     approved = models.BooleanField(default=False)
     booked_on = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField(max_length=100, unique=True, null=True)
 
     class Meta:
         ordering = ["-restaurant", "-booked_on"]

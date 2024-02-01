@@ -20,6 +20,7 @@
                         <ul class="list-unstyled">
                             {% for booking in bookings %}
                                 {% if booking.approved %}
+                                <a href="{% url 'booking_detail' booking.slug %}" class="booking-link">
                                     <li class="card-text list-booking">
                                         <div class="booking-icon">
                                             <i class="fa-solid fa-check" style="color: #63E6BE; margin-right: 5px;"></i>
@@ -31,7 +32,8 @@
                                             <span>{{ booking }}</span>
                                         </div>
                                     </li>
-                                    <hr>
+                                </a>
+                                <hr>
                                 {% endif %}
                             {% endfor %}
                         </ul>
@@ -46,6 +48,7 @@
                     <ul class="list-unstyled">
                         {% for booking in bookings %}
                             {% if not booking.approved %}
+                            <a href="{% url 'booking_detail' booking.slug %}" class="booking-link">
                                 <li class="card-text list-booking">
                                     <div class="booking-icon">
                                         <i class="fa-solid fa-question" style="color: #FFD43B; margin-right: 5px;"></i>
@@ -57,7 +60,8 @@
                                         <span>{{ booking }}</span>
                                     </div>
                                 </li>
-                                <hr>
+                            </a>
+                            <hr>
                             {% endif %}
                         {% endfor %}
                     </ul>
