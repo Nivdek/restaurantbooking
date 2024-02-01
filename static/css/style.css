@@ -58,6 +58,19 @@
     color: antiquewhite;
 }
 
+.list-booking {
+    display: flex;
+}
+
+.booking-icon {
+    align-self: flex-start;
+}
+
+.booking-item {
+    margin-left: auto;
+    margin-right: 46.3px;
+}
+
 .image-container {
     position: relative;
 }

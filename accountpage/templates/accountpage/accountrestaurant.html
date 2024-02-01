@@ -4,6 +4,7 @@
     <ul>
         {% for restaurant in restaurants %}
             <li>{{ restaurant.name }} - {{ restaurant.city }}</li>
+            <hr>
         {% endfor %}
     </ul>
 {% else %}
